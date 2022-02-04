@@ -4,11 +4,7 @@ In this lab you will bootstrap three Kubernetes worker nodes. The following comp
 
 ## Prerequisites
 
-The commands in this lab must be run on each worker instance: `worker-0`, `worker-1`, and `worker-2`. Login to each worker instance using the `gcloud` command. Example:
-
-```
-gcloud compute ssh worker-0
-```
+The commands in this lab must be run on each worker instance: `worker-0`, `worker-1`, and `worker-2`.
 
 ### Running commands in parallel with tmux
 
@@ -44,6 +40,17 @@ sudo swapoff -a
 ```
 
 > To ensure swap remains off after reboot consult your Linux distro documentation.
+
+### Network fix for DNS resolution
+
+During my lab I ran into issues with the DNS resolution from the worker nodes. This was the fix:
+
+```
+sudo modprobe br_netfilter
+sudo echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables
+```
+
+More info about this [issue](https://github.com/kubernetes/kubernetes/issues/21613)
 
 ### Download and Install Worker Binaries
 
@@ -90,8 +97,7 @@ Install the worker binaries:
 Retrieve the Pod CIDR range for the current compute instance:
 
 ```
-POD_CIDR=$(curl -s -H "Metadata-Flavor: Google" \
-  http://metadata.google.internal/computeMetadata/v1/instance/attributes/pod-cidr)
+POD_CIDR=10.200.[use worker number].0/24
 ```
 
 Create the `bridge` network configuration file:

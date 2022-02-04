@@ -1,10 +1,16 @@
-# Kubernetes The Hard Way
+# Kubernetes The Hard Way - Azure Flavour
 
 This tutorial walks you through setting up Kubernetes the hard way. This guide is not for people looking for a fully automated command to bring up a Kubernetes cluster. If that's you then check out [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine), or the [Getting Started Guides](https://kubernetes.io/docs/setup).
 
 Kubernetes The Hard Way is optimized for learning, which means taking the long route to ensure you understand each task required to bootstrap a Kubernetes cluster.
 
 > The results of this tutorial should not be viewed as production ready, and may receive limited support from the community, but don't let that stop you from learning!
+
+## Disclaimer
+
+__ This a re-style of the original tutorial made by [@kelseyhightower](https://github.com/kelseyhightower), the credits for the original work should go the author. I did this guide to help me in my study for the CKA certification. This style follows the original guide but it does it focusing on an Azure deployment. __
+
+[kelseyhightower's original tutorial](https://github.com/kelseyhightower/kubernetes-the-hard-way)
 
 ## Copyright
 
@@ -27,11 +33,11 @@ Kubernetes The Hard Way guides you through bootstrapping a highly available Kube
 
 ## Labs
 
-This tutorial assumes you have access to the [Google Cloud Platform](https://cloud.google.com). While GCP is used for basic infrastructure requirements the lessons learned in this tutorial can be applied to other platforms.
+This tutorial assumes you have access to the [Azure Cloud Platform](https://azure.microsoft.com/en-us/). While Azure is used for basic infrastructure requirements the lessons learned in this tutorial can be applied to other platforms.
 
 * [Prerequisites](docs/01-prerequisites.md)
-* [Installing the Client Tools](docs/02-client-tools.md)
-* [Provisioning Compute Resources](docs/03-compute-resources.md)
+* [Provisioning Compute Resources](docs/02-compute-resources.md)
+* [Installing the Client Tools](docs/03-client-tools.md)
 * [Provisioning the CA and Generating TLS Certificates](docs/04-certificate-authority.md)
 * [Generating Kubernetes Configuration Files for Authentication](docs/05-kubernetes-configuration-files.md)
 * [Generating the Data Encryption Config and Key](docs/06-data-encryption-keys.md)
