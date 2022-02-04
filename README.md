@@ -8,7 +8,7 @@ Kubernetes The Hard Way is optimized for learning, which means taking the long r
 
 ## Disclaimer
 
-__ This a re-style of the original tutorial made by [@kelseyhightower](https://github.com/kelseyhightower), the credits for the original work should go the author. I did this guide to help me in my study for the CKA certification. This style follows the original guide but it does it focusing on an Azure deployment. __
+This a re-style of the original tutorial made by [@kelseyhightower](https://github.com/kelseyhightower), the credits for the original work should go to the author. I did this guide to help me in my study for the CKA certification. This re-style follows the original guide but it changes commands to be compatible with an Azure deployment.
 
 [kelseyhightower's original tutorial](https://github.com/kelseyhightower/kubernetes-the-hard-way)
 
