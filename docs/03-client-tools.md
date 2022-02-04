@@ -100,4 +100,4 @@ kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl > /dev/null
 
 ```
 
-Next: [Provisioning Compute Resources](03-compute-resources.md)
+Next: [Provisioning a CA and Generating TLS Certificates](04-certificate-authority.md)

@@ -24,4 +24,4 @@ __ We will configure a jumpbox in the tutorial, you don't need to install anythi
 
 > Enable synchronize-panes by pressing `ctrl+b` followed by `shift+:`. Next type `set synchronize-panes on` at the prompt. To disable synchronization: `set synchronize-panes off`.
 
-Next: [Installing the Client Tools](02-client-tools.md)
+Next: [Provisione Azure Resources](02-compute-resources.md)

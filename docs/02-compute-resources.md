@@ -197,4 +197,4 @@ __The resulting topology should look like this:__
 
 ![topology screenshot](images/net_topology.PNG)
 
-Next: [Provisioning a CA and Generating TLS Certificates](04-certificate-authority.md)
+Next: [Install Client Tools on the jumpbox](03-client-tools.md)
