@@ -91,7 +91,7 @@ Create 3 `workers` VMs
 ```
 for($i=0; $i -lt 3; $i++)
 {
-  az vm create -n worker-${i} -g k8s-hardway-rg --image UbuntuLTS --availability-set k8s-hw-avs --size Standard_B1ms --vnet-name k8s-hw-vnet --subnet kubernetes --nsg k8s-hw-nsg --admin-password "fC!8=3Hstz%!:eQr" --admin-username "myadmin" --public-ip-address '""'
+  az vm create -n worker-${i} -g k8s-hardway-rg --image UbuntuLTS --availability-set k8s-hw-avs --size Standard_B1ms --vnet-name k8s-hw-vnet --subnet kubernetes --nsg k8s-hw-nsg --admin-password "fC!8=3Hstz%!:eQr" --admin-username "myadmin" --public-ip-sku Standard --public-ip-address-allocation static
 
   az vm auto-shutdown --resource-group k8s-hardway-rg --name worker-${i} --time 1130
 
