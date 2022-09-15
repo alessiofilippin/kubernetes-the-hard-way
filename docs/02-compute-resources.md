@@ -43,7 +43,7 @@ We will need to create an [NSG](https://docs.microsoft.com/en-us/azure/virtual-n
 ```
 az network nsg create -g k8s-hardway-rg -n k8s-hw-nsg --tags k8s-hw
 
-az network nsg rule create -g k8s-hardway-rg --nsg-name k8s-hw-nsg -n AllowInternal --priority 400 --source-address-prefixes 10.0.0.0/8 --destination-port-ranges '*' -direction Inbound --access Allow --protocol Tcp --description "Allow InternalTraffic"
+az network nsg rule create -g k8s-hardway-rg --nsg-name k8s-hw-nsg -n AllowInternal --priority 400 --source-address-prefixes 10.0.0.0/8 --destination-port-ranges '*' --direction Inbound --access Allow --protocol Tcp --description "Allow InternalTraffic"
 
 az network nsg rule create -g k8s-hardway-rg --nsg-name k8s-hw-nsg -n AllowExternal22 --priority 401 --source-address-prefixes '*' --destination-port-ranges 22 --direction Inbound --access Allow --protocol Tcp --description "Allow ExternalTraffic for 22"
 
@@ -187,7 +187,8 @@ az network vnet subnet update --resource-group k8s-hardway-rg --vnet-name k8s-hw
 Let's create a [Service Principal](https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals) This will be used to execute Az Cli commands from the jumpbox. __Make sure to take note of the output of this command__
 
 ```
-az ad sp create-for-rbac --name k8s-hw-sp --role Contributor
+az ad sp create-for-rbac --name k8s-hw-sp --role Contributor --scopes /subscriptions/{YOURSUBID}
+
 
 ```
 
